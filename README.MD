@@ -29,14 +29,18 @@ Add roux.js above your custom javascript files
 <script src="{{asset("js/app.js")}}"></script>
 ```
 Then start to use roux api..
+
+Let assume we have a `user.greetings` route and takes two parameter.
 ```php
 Route::get("welcome/{name}/{surname}", function ($name,$surname) {
     return response()->json("Welcome " . $name." ".$surname);
-})->name("user.greeting");
+})->name("user.greetings");
 ```
-with roux, you can use route names as target. 
+with roux, you can use route name (user.greetings) as target. 
 ```js
-roux.call("user.greeting",["Hasan Teoman","Tıngır"])
+roux = new FetchApiWithRoute();
+
+roux.call("user.greetings",["Hasan Teoman","Tıngır"])
     .then(res => console.log(res))
 //  welcome Hasan Teoman Tıngır
 ```
