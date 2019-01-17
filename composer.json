@@ -1,6 +1,6 @@
 {
     "name": "hsntngr/roux",
-    "description": "A laravel package that makes to use route names in ajax calls",
+    "description": "A laravel package that provide to use route names and actions in fetch calls",
     "require": {
         "illuminate/support": "^5.1"
     },
