@@ -2,7 +2,7 @@
     "name": "hsntngr/roux",
     "description": "A laravel package that provide to use route names and actions in fetch calls",
     "require": {
-        "illuminate/support": "^5.1"
+        "illuminate/support": ">=5.1.0"
     },
     "license": "MIT",
     "authors": [
