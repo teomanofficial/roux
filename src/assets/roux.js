@@ -85,6 +85,12 @@ class FetchApiWithRoute {
 
     organiseOptions(options) {
         const optionData = {};
+        
+        optionData.headers = {
+            // its needed to specify to ajax request
+            // and also reduce to cors attacks
+            "X-Requested-With": "XMLHttpRequest"
+        };
 
         if (options.hasOwnProperty("credentials")) {
             optionData["credentials"] = options.credentials;
@@ -111,14 +117,11 @@ class FetchApiWithRoute {
             optionData["method"] = options.method;
         }
         if (options.hasOwnProperty("csrf")) {
-            if (!optionData.hasOwnProperty("headers"))
-                optionData["headers"] = {};
             optionData.headers["X-CSRF-TOKEN"] = options.csrf;
         }
         if (options.hasOwnProperty("contentType")) {
-            if (!optionData.hasOwnProperty("headers"))
-                optionData["headers"] = {};
-            optionData.headers["Content-Type"] = this.getDataType(options.contentType)
+            optionData.headers["Content-Type"] = this
+                .getDataType(options.contentType)
         }
         return optionData
     };
