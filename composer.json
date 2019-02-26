@@ -2,8 +2,7 @@
     "name": "hsntngr/roux",
     "description": "A laravel package that provide to use route names and actions in fetch calls",
     "keywords": [
-    "repository pattern",
-    "laravel repository",
+    "fetch api",
     "laravel"    
   ],
     "require": {
