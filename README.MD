@@ -1,11 +1,14 @@
 # Roux API
 
-Roux Api provide you to use route names and actions while sending fetch calls in laravel projects
-Note: Currently under development
+Roux Api provide you to use route names and actions while sending fetch calls on laravel projects
 
 **Installation**
 
-install roux via composer
+install roux api
+
+`npm i roux-api`
+
+install route provider for roux api through composer
 
 `composer require hsntngr/roux`
 
@@ -21,13 +24,6 @@ Add roux service provider to providers in `config/app.php`
     Hsntngr\Roux\RouxServiceProvider::class
 ];
 ```
-
-Add roux.js above your custom javascript files
-
-```html
-<script src="{{asset("js/roux.js")}}"></script>
-<script src="{{asset("js/app.js")}}"></script>
-```
 Then start to use roux api..
 
 Let assume we have a `user.greetings` route and takes two parameter.
@@ -38,7 +34,7 @@ Route::get("welcome/{name}/{surname}", function ($name,$surname) {
 ```
 with roux, you can use route name (user.greetings) as target. 
 ```js
-roux = new FetchApiWithRoute();
+roux = new Roux;
 
 roux.call("user.greetings",["Hasan Teoman","Tıngır"])
     .then(res => console.log(res))
@@ -66,6 +62,8 @@ roux.call({
     csrf: token,
     data: postData
 });
+// or
+roux.call("PostController@show", postId)
 ```
 
 
