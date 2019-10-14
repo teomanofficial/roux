@@ -14,7 +14,7 @@ install route provider for roux api through composer
 
 Publish config and asset file of package. 
 
-`php artisan vendor:publish --provider="Hsntngr\Roux\RouxServiceProvider" --tag="config" --tag="asset"`
+`php artisan vendor:publish --provider="Hsntngr\Roux\RouxServiceProvider" --tag="config" 
 
 Add roux service provider to providers in `config/app.php`
 
