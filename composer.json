@@ -1,0 +1,25 @@
+{
+    "name": "hsntngr/roux",
+    "description": "A laravel package that provide to use route names and actions in fetch calls",
+    "keywords": [
+    "fetch api",
+    "laravel"    
+  ],
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support": "4.2.*|5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Teoman Hasan Tıngır",
+            "email": "hasantngr.53@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hsntngr\\Roux\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
