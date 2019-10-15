@@ -66,7 +66,34 @@ roux.call({
     csrf: token,
     data: postData
 });
+
+roux.call("PostController@show", postId)
 ```
 
+By  default, roux looks for csrf token in dom and set csrf header. 
+
+```html
+<!--common csrf fields in dom that roux looks for-->
+@csrf
+{{ csrf_field() }}
+<input name="_token" value="{{ csrf_token() }}">
+<meta name="csrf-field" content="{{ csrf_token() }}">
+``` 
+
+You can work with any api more elegant way by setting up default roux for each service
+
+```js
+var postApi = new Roux({
+    as: "posts.",
+    namespace: "Api"
+})
+```
+
+now we can sand requests through postApi
+
+```js
+postApi.call("show", postId)
+postApi.call("update", postId, {data: data})
+```
 
 Copyright [MIT LICENCE](./LICENSE.MD)
