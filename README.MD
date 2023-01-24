@@ -7,7 +7,7 @@ Note: Currently under development
 
 install roux via composer
 
-`composer require hsntngr/roux`
+`composer require teomanofficial/roux`
 
 Publish config and asset file of package. 
 
